@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Images/e icon.jpg" type="image/x-icon">
+    <title>Eventra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+    <script src="Bootstrap/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            font-family: Ibarra Real Nova;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1440px;
+            position: relative;
+            width: 100%;
+            background-color: white;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        #nav3:hover {
+            color: rgb(49, 49, 253);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        #nav2:hover {
+            color: rgb(49, 49, 253);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        #nav1.active {
+            color: rgb(49, 49, 253);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            font-weight: 600;
+            font-size: 18px;
+
+        }
+
+        #nav1,
+        #nav2,
+        #nav3 {
+            color: black;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        #log1 {
+            font-weight: 600;
+            font-size: 18px;
+            color: rgb(49, 49, 253);
+        }
+
+        #log2 {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .global {
+            font-family: Luxurious Roman;
+            left: 411px;
+            font-size: 48px;
+            font-weight: 400;
+            text-align: center;
+            position: absolute;
+            top: 62px;
+            line-height: 10px;
+        }
+
+        .map {
+            padding-top: 162px;
+            padding-left: 138px;
+            margin-bottom: 50px;
+        }
+
+        .cat {
+            height: 501px;
+            width: 100%;
+            background-color: #F8F9FA;
+        }
+
+        .cat-tit {
+            font-family: 'Inter', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: 0px;
+            padding-top: 55px;
+            margin-left: 99px;
+        }
+
+        .cat-text {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0px;
+            font-size: 16px;
+            line-height: 24px;
+            margin-left: 99px;
+        }
+
+        .cat-but {
+            text-decoration: none;
+            color: #3525CD;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            position: absolute;
+            left: 1100px;
+            margin-top: -80px;
+            font-weight: 600;
+        }
+
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+            height: 60px;
+            width: 60px;
+        }
+
+        .i1,
+        .i2,
+        .i3,
+        .i4,
+        .i5,
+        .i6 {
+            height: 137px;
+            width: 140px;
+            margin: auto;
+            display: block;
+            float: left;
+            padding: 23px 40px;
+            background-color: white;
+            margin-left: 83px;
+            margin-top: 85px;
+            border-radius: 20px;
+        }
+
+        .ip1,
+        .ip2,
+        .ip3,
+        .ip4,
+        .ip5,
+        .ip6 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            height: 984px;
+            width: 100%;
+            background-color: #F3F4F5;
+        }
+
+        .hb {
+            border-radius: 40px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            height: 50px;
+            width: 135px;
+            margin-top: 22px;
+        }
+
+        .hm {
+            width: 400px;
+            height: 267px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        .hcard {
+            width: 400px;
+            height: 535px;
+            margin-top: 103px;
+            border-radius: 50px;
+        }
+
+        .highhead {
+            font-family: 'Inter', sans-serif;
+            font-sizef: 36px;
+            font-weight: 800;
+            padding-top: 98px;
+            margin-left: 103px;
+        }
+
+        .see {
+            text-decoration: none;
+            display: flex;
+            float: right;
+            margin-right: 200px;
+            font-family: 'Inter', sans-serif;
+            font-sizef: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-top: -30px;
+        }
+
+        .temp1 {
+            height: 664px;
+            width: 100%;
+            background-color: #F8F9FA;
+            position: relative;
+        }
+
+        .bg {
+            height: 518px;
+            width: 1376px;
+            background-color: #1B3989;
+            margin-top: 73px;
+            margin-left: 32px;
+            border-radius: 50px;
+            position: absolute;
+        }
+
+        .temphead {
+            height: 354px;
+            max-width: 793px;
+            margin-top: 47px;
+            margin-left: 201px;
+            z-index: 12;
+            position: absolute;
+            top: 10%;
+        }
+
+        .temptit {
+            font-family: 'Inter';
+            font-size: 70px;
+            line-height: 80px;
+            letter-spacing: -3px;
+            color: white;
+            word-wrap: break-word;
+            text-align: center;
+            font-weight: 900;
+            margin-top: -50px;
+        }
+
+        .temppara {
+            font-family: 'Inter';
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 0px;
+            color: white;
+            word-wrap: break-word;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .temp2 {
+            background-color: rgba(19, 40, 111, 1);
+            height: 639px;
+            width: 100%;
+            position: relative;
+        }
+
+        .bg2 {
+            position: absolute;
+            height: 400px;
+            width: 525px;
+
+        }
+
+        .temimg {
+            position: absolute;
+            left: 664px;
+            top: 80px;
+        }
+
+        .temp2p1 {
+            font-family: 'Inter';
+            font-size: 50px;
+            font-weight: 900;
+            padding-top: 70px;
+            margin-left: 54px;
+            color: white;
+        }
+
+        .temp2p2 {
+            font-family: 'Inter';
+            font-size: 18px;
+            color: white;
+            padding-top: 50px;
+            margin-left: 54px;
+            font-weight: 400;
+        }
+
+        .temp2email {
+            width: 397px;
+            height: 69px;
+            border-radius: 12px;
+            border: 2px solid white;
+            background-color: rgba(19, 40, 111, 1);
+            padding: 23px;
+            font-family: 'Inter';
+            font-size: 18px;
+            margin-left: 54px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .review {
+            width: 100%;
+            height: 558px;
+            background-color: rgba(210, 210, 213, 0.23);
+        }
+
+        .revp1 {
+            font-family: 'Inter';
+            font-size: 60px;
+            color: black;
+            font-weight: 900;
+            line-height: 50px;
+            padding-top: 97px;
+            margin-left: 121px;
+        }
+
+        .revp2 {
+            font-family: 'Inter';
+            font-size: 14px;
+            color: black;
+            font-weight: 300;
+            display: flex;
+            float: right;
+            margin-top: -100px;
+            margin-right: 100px;
+        }
+
+        .rev1,
+        .rev2,
+        .rev3 {
+            height: 208px;
+            width: 358px;
+            border: 1px solid black;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            float: left;
+        }
+
+        .rev2,
+        .rev3 {
+            margin-left: 52px;
+        }
+
+        .rev1 {
+            margin-left: 121px;
+        }
+
+        .f {
+            background-color: rgba(15, 23, 42, 1);
+            width: 100%;
+            height: 290px;
+            display: flex;
+            position: relative;
+            clear: both;
+        }
+        .ff{
+        background-color: rgba(15, 23, 42, 1);
+        height: 119px;
+        }
+        .f2{
+            margin-left: 300px;
+        }
+        .fa{
+            text-decoration: none;
+            color: rgba(156, 163, 175, 1);
+            font-family: 'Inter';
+            font-size: 14px;
+            padding-top: 10px;  
+            margin-bottom: 10px;
+            display: block;    
+        }
+        .f3, .f4{
+            margin-left: 150px;
+        }
+        .ffa{
+            text-decoration: none;
+            color: rgba(156, 163, 175, 1);
+            font-family: 'Inter';
+            font-size: 14px;
+            margin-left: 100px;
+        }
+        .carocap{
+            position: absolute;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg bg-white mx-auto ms-5" style="min-width: 1440px;">
+            <div class="container-fluid p-0">
+                <img src="./Images/Frame 10.png" alt="Img">
+                <div class="collapse navbar-collapse" style="padding-left: 180px;" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto" style="gap: 37px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="nav1" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav2" href="#">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav2" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav gap-5 mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="log1" aria-current="page" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="log2" class="btn btn-primary">Signup</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- carousel -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide m-0" data-bs-ride="carousel">
+            <div class="carocap">
+                        <h5 style="width: 308px; height: 36px; text-align: center; margin-top: 50px; margin-left: 600px; background-color: rgba(223, 217, 255, 1); border-radius: 20px; color: rgba(53, 37, 205, 1); padding-top: 5px;">CURATED EXPERIENCE</h5>
+                        <p style="font-family: 'Inter'; font-size: 76px; color: white; font-weight: 900; width: 702px; margin-top: 10px; margin-left: 400px; text-align: center;">Discover & Book <span style="color: #000;">Amazing Events     </span>Near You</p>
+                        <p style="font-family: 'Inter'; font-size: 20px; color: rgba(0, 0, 0, 1);line-height: 28px; width: 652px; text-align: center; margin-left: 400px;">Unlock exclusive access to the most sophisticated gatherings, high-
+tech summits, and cultural celebrations in your city.</p>
+                        <img src="./Images/Icon group.png" alt="Img" style="margin-left: 370px;margin-top: 10px;">
+                    </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active firstslide" data-bs-interval="2000">
+                    <img src="./Images/Slide1.jpg" class="d-block w-100" alt="Img"
+                        style="height:650px; object-fit:cover; object-position:center; background-repeat: no-repeat;">
+                </div>
+                <div class="carousel-item secondslide" data-bs-interval="1000">
+                    <img src="./Images/Slide2.png" class="d-block w-100" alt="Img"
+                        style="height:650px; object-fit:cover; object-position:center; background-repeat: no-repeat;">
+                </div>
+                <div class="carousel-item thirdslide" data-bs-interval="0.2">
+                    <img src="./Images/Slide3.jpg" class="d-block w-100" alt="Img"
+                        style="height:650px; object-fit:cover; object-position:center; background-repeat: no-repeat;">
+                </div>
+                <div class="carousel-item fourthslide" data-bs-interval="2000">
+                    <img src="./Images/Slide4.jpg" class="d-block w-100" alt="Img"
+                        style="height:650px; object-fit:cover; object-position:center; background-repeat: no-repeat;">
+                </div>
+            </div>
+        </div>
+        <!-- Map -->
+        <div style="position: relative;">
+            <p class="global">OUR GLOBAL FOOTPRINT <br>___________</p>
+            <img class="map" src="./Images/Map-1 1.png" alt="Img">
+        </div>
+        <!-- Icons -->
+        <div class="cat">
+            <h5 class="cat-tit">Curated Collections</h5>
+            <p class="cat-text">Browse our hand-picked categories designed for every taste and lifestyle.</p>
+            <a href="#" class="cat-but" data-bs-toggle="dropdown" aria-expanded="false"> View All Categories -></a>
+            <div class="cat-i">
+                <div class="i1">
+                    <img src="./Images/f7_music-albums.png" alt="Img" class="img1">
+                    <p class="ip1">Music</p>
+                </div>
+                <div class="i2">
+                    <img src="./Images/streamline-sharp_deepfake-technology-2-remix.png" alt="Img" class="img1">
+                    <p class="ip2">Tech</p>
+                </div>
+                <div class="i3">
+                    <img src="./Images/Vector.png" alt="Img" class="img1">
+                    <p class="ip3">Sports</p>
+                </div>
+                <div class="i4">
+                    <img src="./Images/fluent_food-24-filled.png" alt="Img" class="img1">
+                    <p class="ip4">Food</p>
+                </div>
+                <div class="i5">
+                    <img src="./Images/mdi_art.png" alt="Img" class="img1">
+                    <p class="ip5">Art</p>
+                </div>
+                <div class="i6">
+                    <img src="./Images/material-symbols-light_travel.png" alt="Img" class="img1">
+                    <p class="ip6">Travel</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="highlight">`
+            <h2 class="highhead">Featured Highlights</h2>
+            <a href="#" class="see">SEE ALL</a>
+            <div class="d-grid gap-3 d-md-block">
+                <button class="btn btn-primary hb" type="button" style="margin-left: 103px;">All Events</button>
+                <button class="btn btn-outline-primary hb" type="button" style="margin-left: 23px; width: 164px;">This
+                    Weekend</button>
+                <button class="btn btn-outline-primary hb" type="button"
+                    style="margin-left: 23px; width: 122px;">Concert</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="carouselExampleControls">
+                <div class="col">
+                    <div class="card hcard" style="margin-left: 103px;">
+                        <img src="./Images/H1.jpg" class="card-img-top hm" alt="...">
+                        <div class="card-body" style="line-height: 25px;">
+                            <p
+                                style="font-family: 'Inter'; font-size: 10px; color: #3525CD; font-weight: 900; letter-spacing: 1px;">
+                                RECEPTION</p>
+                            <button
+                                style="display: inline-flex; float: right; margin-top: -300px; margin-right: 270px; padding: 0px 16px; font-size: 10px; font-weight: 600; font-family: 'Inter'; height: 23px; width: 90px; background-color: #79DC5E; border-radius: 20px;">LIVE
+                                NOW</button>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -40px; margin-right: 30px; font-size: 24px; font-weight: 1000; font-family: 'Inter';">$80</span>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -20px; margin-right: 30px; font-size: 10px; font-family: 'Inter'; color: #464555;">Per
+                                Head</span>
+                            <h5 class="card-title"
+                                style="font-size: 24px; font-family: 'Inter'; font-weight: 600; margin-bottom: 20px;">
+                                Marriage Event</h5>
+                            <p><img src="./Images/simple-line-icons_calender.png" alt="img"> March 28, 2026 - 02:30</p>
+                            <p><img src="./Images/mdi_location.png" alt=""> Priya Palace, Thanjavur</p>
+                            <button class="btn btn-primary btn-lg" style="width: 321px; margin-left: 20px;">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card hcard" style="margin-left: 70px;">
+                        <img src="./Images/H2.jpg" class="card-img-top hm" alt="...">
+                        <div class="card-body" style="line-height: 25px;">
+                            <p
+                                style="font-family: 'Inter'; font-size: 10px; color: #3525CD; font-weight: 900; letter-spacing: 1px;">
+                                TECHNOLOGY SUBMIT</p>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -40px; margin-right: 30px; font-size: 24px; font-weight: 1000; font-family: 'Inter';">$99</span>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -20px; margin-right: 30px; font-size: 10px; font-family: 'Inter'; color: #464555;">Per
+                                Head</span>
+                            <h5 class="card-title"
+                                style="font-size: 24px; font-family: 'Inter'; font-weight: 600; margin-bottom: 20px;">
+                                NextGen AI Summit</h5>
+                            <p><img src="./Images/simple-line-icons_calender.png" alt="img"> March 29, 2026 - 02:30</p>
+                            <p><img src="./Images/mdi_location.png" alt=""> Priya Stadium, Thanjavur</p>
+                            <button class="btn btn-primary btn-lg" style="width: 321px; margin-left: 20px;">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card hcard" style="margin-left: 32px;">
+                        <img src="./Images/H3.jpg" class="card-img-top hm" alt="...">
+                        <div class="card-body" style="line-height: 25px;">
+                            <p
+                                style="font-family: 'Inter'; font-size: 10px; color: #3525CD; font-weight: 900; letter-spacing: 1px;">
+                                CULINARY EXPERIENCE</p>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -40px; margin-right: 30px; font-size: 24px; font-weight: 1000; font-family: 'Inter';">$20</span>
+                            <span
+                                style="display: inline-flex; float: right; margin-top: -20px; margin-right: 30px; font-size: 10px; font-family: 'Inter'; color: #464555;">Per
+                                Head</span>
+                            <h5 class="card-title"
+                                style="font-size: 24px; font-family: 'Inter'; font-weight: 600; margin-bottom: 20px;">
+                                Samosa Food Expo</h5>
+                            <p><img src="./Images/simple-line-icons_calender.png" alt="img"> April 03, 2026 - 11:30</p>
+                            <p><img src="./Images/mdi_location.png" alt=""> Priya Food Court, Thanjavur</p>
+                            <button class="btn btn-primary btn-lg" style="width: 321px; margin-left: 20px;">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="scrollCards(430)"
+                    style=" z-index: 10; margin-top: -300px; margin-left:1400px; width:50px; height:50px; border-radius:50%; border:1px solid rgb(98, 96, 96); background:rgb(255, 255, 255); color:rgb(83, 81, 81); font-size:30px; padding-bottom: 20px; font-weight: 600; cursor:pointer;">›</button>
+            </div>
+        </div>
+
+        <!-- Template-1 -->
+        <div class="temp1">
+            <div class="bg">
+                <img src="./Images/Rectangle 1.png" alt="Img" style="padding-top: 44px; padding-left: 34px;">
+                <div class="temphead">
+                    <p class="temptit">Want to host your own event?</p>
+                    <p class="temppara">Join thousands of creators using Eventra to sell tickets, manage attendees, and
+                        build vibrant
+                        communities around their passions.</p>
+                    <button class="btn btn-light"
+                        style="color: #4232D0; width: 202px; height: 64px; font-size: 18px; font-family: 'Inter'; font-weight: 900; border-radius: 15px; margin-left: 135px; margin-top: 50px;">Create
+                        Event</button>
+                    <button class="btn btn-secondary"
+                        style="color: #000; background-color: rgba(255, 255, 255, 0.1); width: 202px; height: 64px; font-size: 18px; font-family: 'Inter'; font-weight: 900; border-radius: 15px; margin-left: 135px; margin-top: 50px;">How
+                        it Works</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template-2 -->
+        <div class="temp2">
+            <div class="bg2">
+                <p class="temp2p1"><span style="color: rgba(53, 37, 205, 1);">Discover events </span>curated just for
+                    you</p>
+                <p class="temp2p2">Get personalized event updates and exclusive invites</p>
+                <input type="email" placeholder="Email" class="temp2email">
+                <button class="btn btn-light"
+                    style="height: 61px; width: 167px; border: 2px solid rgba(14, 67, 241, 1); border-radius: 20px; margin-left: 54px; margin-top: 25px; font-family: 'Inter'; font-size: 16px; font-weight: 700;">Subscribe
+                    Now</button>
+            </div>
+            <img class="temimg" src="./Images/Subscribe.png" alt="">
+        </div>
+
+        <!-- Review -->
+        <div class="review">
+            <p class="revp1"> <b>Reviews That Make Us <br> Blush</b></p>
+            <span class="revp2">Our clients say it best. Here's why brands, from startups to Fortune 500s, <br> keep
+                coming back for more madness.</span>
+            <div class="card rev1">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="font-family: 'Inter'; padding-top: 5px; font-size: 20px; color: rgba(0, 0, 0, 1); font-weight: 500;">
+                        <span
+                            style="height: 40px; width: 40px; border-radius: 50%; color: white; background-color: rgba(121, 220, 94, 1); padding: 11px 15px;">P</span>
+                        Priya Anbu <br><span
+                            style="display: flex; float: left; font-family: 'Inter'; font-size: 14px; color: rgba(181, 167, 167, 1); font-weight: 500; margin-left: 55px;">1
+                            year ago</span>
+                    </h5>
+                    <img src="./Images/Google.png" alt="img"
+                        style="display: flex; float: right; height: 28px; width: 28px; margin-top: -30px; margin-right: 13px;">
+                    <img src="./Images/Star.png" alt="Img" style="padding-right: 90px;">
+                    <p style="font-family: 'Inter'; font-size: 16px; padding-top: 10px;">Amazing event with
+                        great organization. Everything was smooth and enjoyable from start to end.</p>
+                    <p style="font-family: 'Inter'; font-size: 15px; margin-top: -15px; color: rgba(190, 190, 190, 1);">
+                        Read More...</p>
+                </div>
+            </div>
+            <div class="card rev2">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="font-family: 'Inter'; padding-top: 5px; font-size: 20px; color: rgba(0, 0, 0, 1); font-weight: 500;">
+                        <span
+                            style="height: 40px; width: 40px; border-radius: 50%; color: white; background-color: rgba(53, 37, 205, 1); padding: 11px 15px;">S</span>
+                        Swathi Sundar <br><span
+                            style="display: flex; float: left; font-family: 'Inter'; font-size: 14px; color: rgba(181, 167, 167, 1); font-weight: 500; margin-left: 55px;">1
+                            year ago</span>
+                    </h5>
+                    <img src="./Images/Google.png" alt="img"
+                        style="display: flex; float: right; height: 28px; width: 28px; margin-top: -30px; margin-right: 13px;">
+                    <img src="./Images/Star.png" alt="Img" style="padding-right: 90px;">
+                    <p style="font-family: 'Inter'; font-size: 16px; padding-top: 10px;">Great atmosphere and
+                        well-planned event.Totally worth the time and money.</p>
+                    <p style="font-family: 'Inter'; font-size: 15px; margin-top: -15px; color: rgba(190, 190, 190, 1);">
+                        Read More...</p>
+                </div>
+            </div>
+            <div class="card rev3">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="font-family: 'Inter'; padding-top: 5px; font-size: 20px; color: rgba(0, 0, 0, 1); font-weight: 500;">
+                        <span
+                            style="height: 40px; width: 40px; border-radius: 50%; color: white; background-color: rgba(214, 60, 228, 1); padding: 11px 15px;">S</span>
+                        Santhosh <br><span
+                            style="display: flex; float: left; font-family: 'Inter'; font-size: 14px; color: rgba(181, 167, 167, 1); font-weight: 500; margin-left: 55px;">1
+                            year ago</span>
+                    </h5>
+                    <img src="./Images/Google.png" alt="img"
+                        style="display: flex; float: right; height: 28px; width: 28px; margin-top: -30px; margin-right: 13px;">
+                    <img src="./Images/Star.png" alt="Img" style="padding-right: 90px;">
+                    <p style="font-family: 'Inter'; font-size: 16px; padding-top: 10px;">Loved the overall experience
+                        and crowd energy.Everything was organized perfectly.</p>
+                    <p style="font-family: 'Inter'; font-size: 15px; margin-top: -15px; color: rgba(190, 190, 190, 1);">
+                        Read More...</p>
+                </div>
+            </div>
+            <div>
+                <button onclick="scrollCards(430)"
+                    style="position: relative; z-index: 18; margin-top: 100px; margin-left: -20px; width:50px; height:50px; border-radius:50%; border:1px solid rgb(98, 96, 96); background:rgb(255, 255, 255); color:rgb(83, 81, 81); font-size:30px; font-weight: 600; cursor:pointer;">›</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="f">
+           <div class="f1" style="margin-left: 123px; padding-top: 76px;">
+            <p style="font-family: 'Inter'; font-size: 24px; color: rgba(255, 255, 255, 1); font-weight: 600; margin-bottom: 26px;">Eventra</p>
+            <p style="font-size: 14px; font-family: 'Inter'; color: rgba(156, 163, 175, 1);">Discover and book amazing events <br> near you</p>
+            <img src="./Images/Icon Frame.png" alt="">
+           </div>
+
+           <div class="f2">
+            <p style="font-family: 'Inter'; font-size: 16px; color: rgba(255, 255, 255, 1); font-weight: 400; margin-top: 76px;">Explore</p>
+            <a class="fa" href="#">Explore Events</a>
+            <a class="fa" href="#">Categories</a>
+            <a class="fa" href="#">Popular Events</a>
+           </div>
+ 
+           <div class="f3">
+            <p style="font-family: 'Inter'; font-size: 16px; color: rgba(255, 255, 255, 1); font-weight: 400; margin-top: 76px;">Company</p>
+            <a class="fa" href="#">About Us</a>
+            <a class="fa" href="#">Career</a>
+            <a class="fa" href="#">Blog</a>
+           </div>
+           
+           <div class="f4">
+            <p style="font-family: 'Inter'; font-size: 16px; color: rgba(255, 255, 255, 1); font-weight: 400; margin-top: 76px;">Support</p>
+            <a class="fa" href="#">Help Centre</a>
+            <a class="fa" href="#">FAQs</a>
+            <a class="fa" href="#">Contact Us</a>
+           </div>
+        </div>
+        <div class="ff">
+           <p style="border: 1px solid rgba(148, 153, 160, 1); width: 1194px; margin-left: 100px;"></p>
+           <a href="#" class="ffa">Privacy Policy</a>
+            <a href="#" class="ffa">Terms & Conditions</a>
+           <a href="#" class="ffa">Cookies</a>
+           <span style="display: flex; float: right; color: rgba(156, 163, 175, 1); font-family: 'Inter'; font-size: 14px; margin-right: 170px; margin-top: 20px;">© 2026 Events</span>
+
+        </div>
+    </div>
+</body>
+
+</html>
